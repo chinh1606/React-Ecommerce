@@ -48,10 +48,10 @@ export const Navbar=({isProductList=false})=> {
   }
 
   const settings = [
-    {name:"Home",to:"/"},
-    {name:'Profile',to:loggedInUser?.isAdmin?"/admin/profile":"/profile"},
-    {name:loggedInUser?.isAdmin?'Orders':'My orders',to:loggedInUser?.isAdmin?"/admin/orders":"/orders"},
-    {name:'Logout',to:"/logout"},
+    {name:"Trang chủ",to:"/"},
+    {name:'Trang cá nhân',to:loggedInUser?.isAdmin?"/admin/profile":"/profile"},
+    {name:loggedInUser?.isAdmin?'Đặt hàng':'Đơn đặt hàng của tôi',to:loggedInUser?.isAdmin?"/admin/orders":"/orders"},
+    {name:'Đăng xuất',to:"/logout"},
   ];
 
   return (
@@ -91,7 +91,7 @@ export const Navbar=({isProductList=false})=> {
                 loggedInUser?.isAdmin && 
               
                 <MenuItem  onClick={handleCloseUserMenu}>
-                  <Typography component={Link} color={'text.primary'} sx={{textDecoration:"none"}} to="/admin/add-product" textAlign="center">Add new Product</Typography>
+                  <Typography component={Link} color={'text.primary'} sx={{textDecoration:"none"}} to="/admin/add-product" textAlign="center">Thêm sản phẩm</Typography>
                 </MenuItem>
               
               }

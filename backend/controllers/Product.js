@@ -99,7 +99,17 @@ exports.getById=async(req,res)=>{
 exports.updateById = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, price, discountPercentage, category, brand, stockQuantity } = req.body;
+    const {
+      title,
+      description,
+      price,
+      discountPercentage,
+      category,
+      brand,
+      stockQuantity,
+      thumbnail,
+      images,
+    } = req.body;
 
     const product = await Product.findById(id);
     if (!product) {
@@ -109,31 +119,42 @@ exports.updateById = async (req, res) => {
       return res.status(400).json({ message: 'Sản phẩm đã bị xóa, vui lòng khôi phục trước' });
     }
 
-    if (title) product.title = title;
-    if (description) product.description = description;
-    if (price) product.price = price;
+    if (title !== undefined) product.title = title;
+    if (description !== undefined) product.description = description;
+    if (price !== undefined) product.price = price;
     if (discountPercentage !== undefined) product.discountPercentage = discountPercentage;
-    if (category) product.category = category;
-    if (brand) product.brand = brand;
-    if (stockQuantity) product.stockQuantity = stockQuantity;
+    if (category !== undefined) product.category = category;
+    if (brand !== undefined) product.brand = brand;
+    if (stockQuantity !== undefined) product.stockQuantity = stockQuantity;
 
-    // Cập nhật thumbnail nếu có file mới
-    if (req.files && req.files.thumbnail) {
-      product.thumbnail = req.files.thumbnail[0].path;
-    }
+    if (thumbnail !== undefined) product.thumbnail = thumbnail;
 
-    if (req.files && req.files.images) {
-      const newImages = req.files.images.map(file => file.path);
-      product.images = newImages;
+    if (images !== undefined) {
+      if (typeof images === 'string') {
+        try {
+          product.images = JSON.parse(images); // nếu FE stringify
+        } catch {
+          product.images = [images]; // nếu chỉ là 1 URL
+        }
+      } else if (Array.isArray(images)) {
+        product.images = images;
+      }
     }
 
     await product.save();
-    res.status(200).json({ message: 'Cập nhật sản phẩm thành công', product });
+
+    res.status(200).json({
+      message: 'Cập nhật sản phẩm thành công',
+      product,
+    });
   } catch (error) {
-    console.log(error);
-    return res.status(500).json({ message: 'Error updating product, please try again later' });
+    console.error('Update product error:', error);
+    res.status(500).json({
+      message: 'Đã xảy ra lỗi khi cập nhật sản phẩm, vui lòng thử lại sau',
+    });
   }
 };
+
 
 exports.undeleteById=async(req,res)=>{
     try {

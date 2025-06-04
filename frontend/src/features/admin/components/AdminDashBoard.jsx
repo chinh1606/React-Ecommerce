@@ -92,13 +92,13 @@ export const AdminDashBoard = () => {
   return (
     <>
 
-    <motion.div style={{position:"fixed",backgroundColor:"white",height:"100vh",padding:'1rem',overflowY:"scroll",width:is500?"100vw":"30rem",zIndex:500}}  variants={{show:{left:0},hide:{left:-500}}} initial={'hide'} transition={{ease:"easeInOut",duration:.7,type:"spring"}} animate={isProductFilterOpen===true?"show":"hide"}>
+    <motion.div style={{position:"fixed",backgroundColor:"white",height:"100vh",padding:'1rem',overflowY:"scroll",width:is500?"100vw":"30rem",zIndex:500}}  variants={{show:{left:0},hide:{left:-500}}} initial={'hide'} transition={{ease:"easeInOut",duration:.7,type:"spring"}} animate={isProductFilterOpen===true?"hiện":"ẩn"}>
 
         {/* fitlers section */}
         <Stack mb={'5rem'}  sx={{scrollBehavior:"smooth",overflowY:"scroll"}}>
 
         
-            <Typography variant='h4'>New Arrivals</Typography>
+            <Typography variant='h4'>Hàng mới về</Typography>
 
 
                 <IconButton onClick={handleFilterClose} style={{position:"absolute",top:15,right:15}}>
@@ -109,18 +109,18 @@ export const AdminDashBoard = () => {
 
 
         <Stack rowGap={2} mt={4} >
-            <Typography sx={{cursor:"pointer"}} variant='body2'>Totes</Typography>
-            <Typography sx={{cursor:"pointer"}} variant='body2'>Backpacks</Typography>
-            <Typography sx={{cursor:"pointer"}} variant='body2'>Travel Bags</Typography>
-            <Typography sx={{cursor:"pointer"}} variant='body2'>Hip Bags</Typography>
-            <Typography sx={{cursor:"pointer"}} variant='body2'>Laptop Sleeves</Typography>
+            <Typography sx={{cursor:"pointer"}} variant='body2'>Tất cả</Typography>
+            <Typography sx={{cursor:"pointer"}} variant='body2'>Ba lô</Typography>
+            <Typography sx={{cursor:"pointer"}} variant='body2'>Túi du lịch</Typography>
+            <Typography sx={{cursor:"pointer"}} variant='body2'>Túi đeo hông</Typography>
+            <Typography sx={{cursor:"pointer"}} variant='body2'>Túi đựng laptop</Typography>
         </Stack>
 
         {/* brand filters */}
         <Stack mt={2}>
             <Accordion>
                 <AccordionSummary expandIcon={<AddIcon />}  aria-controls="brand-filters" id="brand-filters" >
-                        <Typography>Brands</Typography>
+                        <Typography>Thương hiệu</Typography>
                 </AccordionSummary>
 
                 <AccordionDetails sx={{p:0}}>
@@ -141,7 +141,7 @@ export const AdminDashBoard = () => {
         <Stack mt={2}>
             <Accordion>
                 <AccordionSummary expandIcon={<AddIcon />}  aria-controls="brand-filters" id="brand-filters" >
-                        <Typography>Category</Typography>
+                        <Typography>Danh mục</Typography>
                 </AccordionSummary>
 
                 <AccordionDetails sx={{p:0}}>
@@ -168,7 +168,7 @@ export const AdminDashBoard = () => {
 
             <Stack alignSelf={'flex-end'} width={'12rem'}>
                 <FormControl fullWidth>
-                        <InputLabel id="sort-dropdown">Sort</InputLabel>
+                        <InputLabel id="sort-dropdown">Loại</InputLabel>
                         <Select
                             variant='standard'
                             labelId="sort-dropdown"
@@ -176,7 +176,7 @@ export const AdminDashBoard = () => {
                             onChange={(e)=>setSort(e.target.value)}
                             value={sort}
                         >
-                            <MenuItem bgcolor='text.secondary' value={null}>Reset</MenuItem>
+                            <MenuItem bgcolor='text.secondary' value={null}>Cài lại</MenuItem>
                             {
                                 sortOptions.map((option)=>(
                                     <MenuItem key={option} value={option}>{option.name}</MenuItem>
@@ -196,12 +196,12 @@ export const AdminDashBoard = () => {
                             <ProductCard key={product._id} id={product._id} title={product.title} thumbnail={product.thumbnail} brand={product.brand.name} price={product.price} isAdminCard={true}/>
                         </Stack>
                         <Stack paddingLeft={2} paddingRight={2} flexDirection={'row'} justifySelf={'flex-end'} alignSelf={'flex-end'} columnGap={is488?1:2}>
-                            <Button component={Link} to={`/admin/product-update/${product._id}`} variant='contained'>Update</Button>
+                            <Button component={Link} to={`/admin/product-update/${product._id}`} variant='contained'>Cập nhât</Button>
                             {
                                 product.isDeleted===true?(
-                                    <Button onClick={()=>handleProductUnDelete(product._id)} color='error' variant='outlined'>Un-delete</Button>
+                                    <Button onClick={()=>handleProductUnDelete(product._id)} color='error' variant='outlined'>Phục hồi</Button>
                                 ):(
-                                    <Button onClick={()=>handleProductDelete(product._id)} color='error' variant='outlined'>Delete</Button>
+                                    <Button onClick={()=>handleProductDelete(product._id)} color='error' variant='outlined'>Xóa</Button>
                                 )
                             }
                         </Stack>
@@ -212,7 +212,7 @@ export const AdminDashBoard = () => {
 
         <Stack alignSelf={is488?'center':'flex-end'} mr={is488?0:5} rowGap={2} p={is488?1:0}>
             <Pagination size={is488?'medium':'large'} page={page}  onChange={(e,page)=>setPage(page)} count={Math.ceil(totalResults/ITEMS_PER_PAGE)} variant="outlined" shape="rounded" />
-            <Typography textAlign={'center'}>Showing {(page-1)*ITEMS_PER_PAGE+1} to {page*ITEMS_PER_PAGE>totalResults?totalResults:page*ITEMS_PER_PAGE} of {totalResults} results</Typography>
+            <Typography textAlign={'center'}>Hiển thị {(page-1)*ITEMS_PER_PAGE+1} tới {page*ITEMS_PER_PAGE>totalResults?totalResults:page*ITEMS_PER_PAGE} của {totalResults} kết quả</Typography>
         </Stack>    
     
     </Stack> 

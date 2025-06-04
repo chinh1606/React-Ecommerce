@@ -213,7 +213,7 @@ export const AddProduct = () => {
               />
             </Stack>
             <Stack flex={1}>
-              <Typography variant='h6' fontWeight={400} gutterBottom>Giảm giá {is480 ? "%" : "Percentage"}</Typography>
+              <Typography variant='h6' fontWeight={400} gutterBottom>Giảm giá {is480 ? "%" : "phần trăm"}</Typography>
               <TextField 
                 type='number' 
                 {...register("discountPercentage", { required: "Discount percentage is required" })} 

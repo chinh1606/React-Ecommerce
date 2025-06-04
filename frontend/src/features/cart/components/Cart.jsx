@@ -114,7 +114,7 @@ export const Cart = ({checkout}) => {
             !checkout && 
             <Stack rowGap={'1rem'}>
                 <Button variant='contained' component={Link} to='/checkout'>Thanh toán</Button>
-                <motion.div style={{alignSelf:'center'}} whileHover={{y:2}}><Chip sx={{cursor:"pointer",borderRadius:"8px"}} component={Link} to={'/'} label="or continue shopping" variant='outlined'/></motion.div>
+                <motion.div style={{alignSelf:'center'}} whileHover={{y:2}}><Chip sx={{cursor:"pointer",borderRadius:"8px"}} component={Link} to={'/'} label="hoặc tiếp tục mua hàng" variant='outlined'/></motion.div>
             </Stack>
             }
     

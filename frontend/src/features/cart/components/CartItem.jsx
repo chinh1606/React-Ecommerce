@@ -47,7 +47,7 @@ export const CartItem = ({id,thumbnail,title,category,brand,price,quantity,stock
             <Stack alignSelf={''}>
                 <Typography component={Link} to={`/product-details/${productId}`} sx={{textDecoration:"none",color:theme.palette.primary.main}} variant='h6' fontWeight={500}>{title}</Typography>
                 <Typography variant='body2' color={'text.secondary'}>{brand}</Typography>
-                <Typography mt={1}>Quantity</Typography>
+                <Typography mt={1}>Số lượng</Typography>
                 <Stack flexDirection={'row'} alignItems={'center'}>
                     <IconButton onClick={handleRemoveQty}><RemoveIcon fontSize='small'/></IconButton>
                     <Typography>{quantity}</Typography>
@@ -59,7 +59,7 @@ export const CartItem = ({id,thumbnail,title,category,brand,price,quantity,stock
         {/* price and remove button */}
         <Stack justifyContent={'space-evenly'} alignSelf={is552?'flex-end':''} height={'100%'} rowGap={'1rem'} alignItems={'flex-end'}>
             <Typography variant='body2'>${price}</Typography>
-            <Button size={is480?"small":""} onClick={handleProductRemove} variant='contained'>Remove</Button>
+            <Button size={is480?"small":""} onClick={handleProductRemove} variant='contained'>Xóa</Button>
         </Stack>
     </Stack>
   )
