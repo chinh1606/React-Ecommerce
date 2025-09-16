@@ -92,18 +92,18 @@ export const Login = () => {
                     </motion.div>
                     
                     <motion.div whileHover={{scale:1.020}} whileTap={{scale:1}}>
-                      <LoadingButton fullWidth  sx={{height:'2.5rem'}} loading={status==='pending'} type='submit' variant='contained'>Login</LoadingButton>
+                      <LoadingButton fullWidth  sx={{height:'2.5rem'}} loading={status==='pending'} type='submit' variant='contained'>Đăng nhập</LoadingButton>
                     </motion.div>
 
                     <Stack flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'} flexWrap={'wrap-reverse'} >
 
                       <MotionConfig whileHover={{x:2}} whileTap={{scale:1.050}}>
                           <motion.div>
-                              <Typography mr={'1.5rem'} sx={{textDecoration:"none",color:"text.primary"}} to={'/forgot-password'} component={Link}>Forgot password</Typography>
+                              <Typography mr={'1.5rem'} sx={{textDecoration:"none",color:"text.primary"}} to={'/forgot-password'} component={Link}>Quên mật khẩu</Typography>
                           </motion.div>
 
                           <motion.div>
-                            <Typography sx={{textDecoration:"none",color:"text.primary"}} to={'/signup'} component={Link}>Don't have an account? <span style={{color:theme.palette.primary.dark}}>Register</span></Typography>
+                            <Typography sx={{textDecoration:"none",color:"text.primary"}} to={'/signup'} component={Link}>Bạn chưa có tài khoản? <span style={{color:theme.palette.primary.dark}}>Đăng ký</span></Typography>
                           </motion.div>
                       </MotionConfig>
 

@@ -25,39 +25,39 @@ export const Footer = () => {
             <Stack flexDirection={'row'} rowGap={'1rem'} justifyContent={is700?"":'space-around'} flexWrap={'wrap'}>
 
                 <Stack rowGap={'1rem'} padding={'1rem'}>
-                    <Typography variant='h6' fontSize={'1.5rem'}>Exclusive</Typography>
-                    <Typography variant='h6'>Subscribe</Typography>
-                    <Typography sx={labelStyles}>Get 10% off your first order</Typography>
-                    <TextField placeholder='Enter your email' sx={{border:'1px solid white',borderRadius:"6px"}} InputProps={{endAdornment:<IconButton><SendIcon sx={{color:theme.palette.primary.light}}/></IconButton>,style:{color:"whitesmoke"}}}/>
+                    <Typography variant='h6' fontSize={'1.5rem'}>Đặc Quyền</Typography>
+                    <Typography variant='h6'>Đăng ký</Typography>
+                    <Typography sx={labelStyles}>Nhận 10% giảm giá cho đơn hàng đầu tiên của bạn</Typography>
+                    <TextField placeholder='Nhập email của bạn' sx={{border:'1px solid white',borderRadius:"6px"}} InputProps={{endAdornment:<IconButton><SendIcon sx={{color:theme.palette.primary.light}}/></IconButton>,style:{color:"whitesmoke"}}}/>
                 </Stack>
 
                 <Stack rowGap={'1rem'} padding={'1rem'}>
-                    <Typography variant='h6'>Support</Typography>
-                    <Typography sx={labelStyles}>11th Main Street, Dhaka,  DH 1515, California.</Typography>
-                    <Typography sx={labelStyles}>exclusive@gmail.com</Typography>
-                    <Typography sx={labelStyles}>+88015-88888-9999</Typography>
+                    <Typography variant='h6'>Hỗ Trợ</Typography>
+                    <Typography sx={labelStyles}>Trung Thanh Hữu Hòa Thanh Trì Hà Nội</Typography>
+                    <Typography sx={labelStyles}>nguyentachinh2003@gmail.com</Typography>
+                    <Typography sx={labelStyles}>0353611084</Typography>
                 </Stack>
 
                 <Stack rowGap={'1rem'} padding={'1rem'}>
-                    <Typography  variant='h6'>Account</Typography>
-                    <Typography sx={labelStyles}>My Account</Typography>
-                    <Typography sx={labelStyles}>Login / Register</Typography>
-                    <Typography sx={labelStyles}>Cart</Typography>
-                    <Typography sx={labelStyles}>Wishlist</Typography>
-                    <Typography sx={labelStyles}>Shop</Typography>
+                    <Typography  variant='h6'>Tài Khoản</Typography>
+                    <Typography sx={labelStyles}>Tài Khoản Của Tôi</Typography>
+                    <Typography sx={labelStyles}>Đăng Nhập / Đăng Ký</Typography>
+                    <Typography sx={labelStyles}>Giỏ Hàng</Typography>
+                    <Typography sx={labelStyles}>Danh Sách Yêu Thích</Typography>
+                    <Typography sx={labelStyles}>Cửa Hàng</Typography>
                 </Stack>
 
                 <Stack rowGap={'1rem'} padding={'1rem'}>
-                    <Typography  variant='h6'>Quick Links</Typography>
-                    <Typography sx={labelStyles}>Privacy Policy</Typography>
-                    <Typography sx={labelStyles}>Terms Of Use</Typography>
-                    <Typography sx={labelStyles}>FAQ</Typography>
-                    <Typography sx={labelStyles}>Contact</Typography>
+                    <Typography  variant='h6'>Liên Kết Nhanh</Typography>
+                    <Typography sx={labelStyles}>Chính Sách Bảo Mật</Typography>
+                    <Typography sx={labelStyles}>Điều Khoản Sử Dụng</Typography>
+                    <Typography sx={labelStyles}>Câu Hỏi Thường Gặp</Typography>
+                    <Typography sx={labelStyles}>Liên Hệ</Typography>
                 </Stack>
 
                 <Stack rowGap={'1rem'} padding={'1rem'}>
-                    <Typography  variant='h6'>Download App</Typography>
-                    <Typography sx={{...labelStyles,color:"graytext",fontWeight:500}}>Save $3 with App New User Only</Typography>
+                    <Typography  variant='h6'>Tải Ứng Dụng</Typography>
+                    <Typography sx={{...labelStyles,color:"graytext",fontWeight:500}}>Tiết kiệm 58000Đ cho người dùng mới chỉ với ứng dụng</Typography>
                     <Stack flexDirection={'row'} columnGap={'.5rem'}>
 
                         <Box width={'100px'} height={"100px"}>
@@ -88,7 +88,7 @@ export const Footer = () => {
 
             {/* lower */}
             <Stack alignSelf={"center"}>
-                <Typography color={'GrayText'}>&copy; Mern Store {new Date().getFullYear()}. All right reserved</Typography>
+                <Typography color={'GrayText'}>&copy; Chính Store {new Date().getFullYear()}. Tất cả quyền được bảo lưu</Typography>
             </Stack>
 
     </Stack>
