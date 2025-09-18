@@ -47,6 +47,9 @@ export const Cart = ({checkout}) => {
         }
     },[])
 
+    function formatVNDComma(value) {
+    return value.toLocaleString("vi-VN").replace(/\./g, ",") + " đ";
+  }
   return (
     <Stack justifyContent={'flex-start'} alignItems={'center'} mb={'5rem'} >
 
@@ -101,7 +104,7 @@ export const Cart = ({checkout}) => {
                             </Stack>
 
                             <Stack>
-                                <Typography variant='h6' fontWeight={500}>${subtotal}</Typography>
+                                <Typography variant='h6' fontWeight={500}>{formatVNDComma(subtotal)}</Typography>
                             </Stack>
                         </>
                     )

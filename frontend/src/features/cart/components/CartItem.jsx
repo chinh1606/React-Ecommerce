@@ -33,6 +33,9 @@ export const CartItem = ({id,thumbnail,title,category,brand,price,quantity,stock
         dispatch(deleteCartItemByIdAsync(id))
     }
 
+    function formatVNDComma(value) {
+    return value.toLocaleString("vi-VN").replace(/\./g, ",") + " đ";
+  }
 
   return (
     <Stack bgcolor={'white'} component={is900?'':Paper} p={is900?0:2} elevation={1}  flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'}>
@@ -58,7 +61,7 @@ export const CartItem = ({id,thumbnail,title,category,brand,price,quantity,stock
 
         {/* price and remove button */}
         <Stack justifyContent={'space-evenly'} alignSelf={is552?'flex-end':''} height={'100%'} rowGap={'1rem'} alignItems={'flex-end'}>
-            <Typography variant='body2'>${price}</Typography>
+            <Typography variant='body2'>{formatVNDComma(price)}</Typography>
             <Button size={is480?"small":""} onClick={handleProductRemove} variant='contained'>Xóa</Button>
         </Stack>
     </Stack>

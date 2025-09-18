@@ -26,8 +26,8 @@ import Lottie from 'lottie-react'
 
 
 const sortOptions=[
-    {name:"Price: low to high",sort:"price",order:"asc"},
-    {name:"Price: high to low",sort:"price",order:"desc"},
+    {name:"Giá: Thấp đến cao",sort:"price",order:"asc"},
+    {name:"Giá: Cao đến thấp",sort:"price",order:"desc"},
 ]
 
 

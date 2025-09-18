@@ -73,7 +73,7 @@ export const Login = () => {
 
                 <Stack rowGap={'.4rem'}>
                   <Typography variant='h2' sx={{wordBreak:"break-word"}} fontWeight={600}>Mern Shop</Typography>
-                  <Typography alignSelf={'flex-end'} color={'GrayText'} variant='body2'>- Shop Anything</Typography>
+                  <Typography alignSelf={'flex-end'} color={'GrayText'} variant='body2'>- Quần áo </Typography>
                 </Stack>
 
               </Stack>
@@ -81,13 +81,13 @@ export const Login = () => {
                 <Stack mt={4} spacing={2} width={is480?"95vw":'28rem'} component={'form'} noValidate onSubmit={handleSubmit(handleLogin)}>
 
                     <motion.div whileHover={{y:-5}}>
-                      <TextField fullWidth {...register("email",{required:"Email is required",pattern:{value:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,message:"Enter a valid email"}})} placeholder='Email'/>
+                      <TextField fullWidth {...register("email",{required:"Email là bắt buộc",pattern:{value:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,message:"Vui lòng nhập địa chỉ email"}})} placeholder='Email'/>
                       {errors.email && <FormHelperText sx={{mt:1}} error>{errors.email.message}</FormHelperText>}
                     </motion.div>
 
                     
                     <motion.div whileHover={{y:-5}}>
-                      <TextField type='password' fullWidth {...register("password",{required:"Password is required"})} placeholder='Password'/>
+                      <TextField type='password' fullWidth {...register("password",{required:"Password là bắt buộc"})} placeholder='Mật khẩu'/>
                       {errors.password && <FormHelperText sx={{mt:1}} error>{errors.password.message}</FormHelperText>}
                     </motion.div>
                     
